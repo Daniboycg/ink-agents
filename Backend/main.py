@@ -17,12 +17,6 @@ logging.basicConfig(level=logging.INFO)
 env_path = Path(__file__).parent / ".env"
 load_dotenv(env_path)
 
-# Configure OpenAI client
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("OpenAI API key is not set. Please set it in the .env file.")
-set_openai_key(api_key)
-
 client = get_openai_client()
 client.timeout = 60
 
@@ -37,7 +31,8 @@ agency = AgencyUI([manager,
 )
 
 # Create the app
-app = agency.custom_demo(server_name="0.0.0.0", server_port=8000)
+app = agency.custom_demo(server_name="0.0.0.0", server_port=8080)
+
 
 # Run the app
 if __name__ == "__main__":

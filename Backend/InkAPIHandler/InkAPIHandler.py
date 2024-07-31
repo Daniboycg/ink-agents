@@ -6,7 +6,7 @@ class InkAPIHandler(Agent):
     def __init__(self):
         super().__init__(
             name="InkAPIHandler",
-            model="gpt-40-mini",
+            model="gpt-4o-mini",
             description="Handles all interactions with the Ink Innovations API. Traverses the API to fetch, manage, and process flight data.",
             instructions="./instructions.md",
             files_folder="./files",
